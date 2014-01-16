@@ -17,6 +17,11 @@
 		<% else %>
 		  <%= link_to "Sign in", new_user_session_path, id: "sign_in" %>
 		<% end %>
+        <% flash.each do |name, msg| %>
+          <% if msg.is_a?(String) %>
+            <%= content_tag :div, msg, :class => "flash_#{name}" %>
+          <% end %>
+        <% end %>
 	</div>
 </div>
 
